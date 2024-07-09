@@ -47,10 +47,13 @@ body {
 }
 
 .modal h1 {
+    font-size: 24px;
     margin-top: 0;
+    text-align: center;
 }
 
 .modal p {
+    margin-top: 10px;
     margin-bottom: 0;
 }
 
