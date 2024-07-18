@@ -14,14 +14,18 @@ let pokemonRepository = (function () {
     function addListItem(pokemon){
         let pokemonList = document.querySelector(".list-group");
         let listPokemon = document.createElement("li");
-        listPokemon.classList.add("list-group-item");
         let button = document.createElement("button");
+
+        listPokemon.classList.add("list-group-item");
         button.classList.add("btn-dark");
+        button.setAttribute("data-toggle", "modal");
+        button.setAttribute("data-target", "#pokemonModal");
         button.innerText = pokemon.name;
         // button.classList.add("button-class");
         button.addEventListener('click', function() {
             showDetails(pokemon);
         });
+
         listPokemon.appendChild(button);
         pokemonList.appendChild(listPokemon);
     }
@@ -32,12 +36,14 @@ let pokemonRepository = (function () {
     }
 
     function showModal(pokemon) {
-        let modalBody = document.querySelector(".modal-body");
         let modalTitle = document.querySelector(".modal-title");
-        let modalHeader = document.querySelector(".modal-header");
-        modalBody.empty();
-        modalTitle.empty();
-        modalHeader.empty();
+        let modalBody = document.querySelector(".modal-body");
+        // let modalHeader = document.querySelector(".modal-header");
+
+
+        // modalTitle.empty();
+        // modalBody.empty();
+        // modalHeader.empty();
 
         modalTitle.innerText = "Pokemon: " + pokemon.name;
 
@@ -49,54 +55,54 @@ let pokemonRepository = (function () {
         // let modal = document.createElement("div");
         // modal.classList.add("modal");
 
-        let closeButton = document.querySelector("button-close");
+        // let closeButton = document.querySelector("button-close");
         // closeButton.classList.add("modal-close");
         // closeButton.innerText = "Close";
-        closeButton.addEventListener("click", closeModal);
-        window.addEventListener("keydown", (e) => {
-            let modalContainer = document.querySelector("#modal-container");
-            if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
-                closeModal();
-            }
-        });
-        modalContainer.addEventListener("click", (e) => {
-            let target = e.target;
-            if (target === modalContainer) {
-                closeModal();
-            }
-        });
+        // closeButton.addEventListener("click", closeModal);
+        // window.addEventListener("keydown", (e) => {
+        //     let modalContainer = document.querySelector("#modal-container");
+        //     if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
+        //         closeModal();
+        //     }
+        // });
+        // modalContainer.addEventListener("click", (e) => {
+        //     let target = e.target;
+        //     if (target === modalContainer) {
+        //         closeModal();
+        //     }
+        // });
 
         let titleElement = document.createElement("h5");
         // titleElement.classList.add("h1");
-        // titleElement.innerText = "Pokemon: " + pokemon.name;
+        titleElement.innerText = "Pokemon: " + pokemon.name;
 
         let heightElement = document.createElement("div");
         // heightElement.classList.add("modal-body");
-        // heightElement.innerText = "Height: " + pokemon.height;
+        heightElement.innerText = "Height: " + pokemon.height;
 
         let imageElement = document.createElement("img");
         // imageElement.classList.add("modal-body")
-        // imageElement.src = pokemon.imageUrl;
+        imageElement.src = pokemon.imageUrl;
 
         let typesElement = document.createElement("div");
         // typesElement.classList.add("modal-body")
-        // typesElement.innerText = "Type(s): " + pokemon.types;
+        typesElement.innerText = "Type(s): " + pokemon.types;
         
-        modal.appendChild(closeButton);
-        modal.appendChild(titleElement);
-        modal.appendChild(typesElement);
-        modal.appendChild(imageElement);
-        modal.appendChild(heightElement);
+        // modalBody.appendChild(closeButton);
+        // modalBody.appendChild(titleElement);
+        modalBody.appendChild(typesElement);
+        modalBody.appendChild(imageElement);
+        modalBody.appendChild(heightElement);
 
-        modalContainer.innerText = "";
-        modalContainer.appendChild(modal);
+        // modalContainer.innerText = "";
+        // modalContainer.appendChild(modal);
 
-        modalContainer.classList.add("is-visible");
+        // modalContainer.classList.add("is-visible");
     }
 
-    function closeModal() {
-        modalContainer.classList.remove("is-visible");
-    }
+    // function closeModal() {
+    //     modalContainer.classList.remove("is-visible");
+    // }
 
     function loadList() {
         return fetch(apiUrl).then(function (response) {
