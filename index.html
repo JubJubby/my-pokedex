@@ -9,11 +9,40 @@
     </head>
     
     <body>
-        <h1>Pokedex</h1>
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1">Pokedex</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Could switch this for filtering by weight <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a  class="nav-link" href="#">Could switch this for filtering by height </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Maybe use this for filtering by type
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Grass</a>
+                            <a class="dropdown-item" href="#">Water</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Fire</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
         <ul class="list-group"></ul>
 
-        <!-- <div id="modal-container"></div> -->
+
         <div class="modal fade" id="pokemonModal" tabindex="-1" aria-labelledby="pokemonModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered text-center">
                 <div class="modal-content">
