@@ -2,7 +2,7 @@
 let pokemonRepository = (function () {
 
     let pokemonList = [];
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=1302';
+    let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=1302";
 
     function getAll () {
         return pokemonList;
@@ -21,7 +21,7 @@ let pokemonRepository = (function () {
         button.setAttribute("data-toggle", "modal");
         button.setAttribute("data-target", "#pokemonModal");
         button.innerText = pokemon.name;
-        button.addEventListener('click', function() {
+        button.addEventListener("click", function() {
             showDetails(pokemon);
         });
 
