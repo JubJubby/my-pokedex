@@ -3,7 +3,7 @@ This is a basic app that displays a list of items (Pokemon) pulled from an API (
 To do:
 
 - [ ] Add search function by name
-- [ ] Add filter options by typing, height*, and weight*
+- [ ] Add filter options by typing, height, and weight
 - [ ] Add a loading indicator to create a faster experience for the user
 - [ ] Improve styling and formatting to make the app look nicer
 - [ ] Add a feature to hit next/previous or be able to swipe from one item to the next without leaving the modal
